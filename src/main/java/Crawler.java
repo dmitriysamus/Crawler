@@ -63,7 +63,7 @@ public class Crawler {
 
         //проверка слов на соответствие передаваемым в качестве агрумента и подсчет вхождений
         Map<String, Integer> map = new TreeMap<>();
-        for (String word: lowerWords) {
+        for (String word : lowerWords) {
             if (words.contains(word)) {
                 if (map.containsKey(word)) {
                     map.put(word, map.get(word) + 1);
