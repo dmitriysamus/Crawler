@@ -1,22 +1,25 @@
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
 
-
-//        ArrayList<String> list = new ArrayList<>(); //искать слова - передача аргументов из кода
-//        list.add("к");
+//        //искать слова - передача аргументов из кода
+//        ArrayList<String> list = new ArrayList<>();
 //        list.add("новый");
-//        list.add("iphone");
+//        list.add("даже");
+//        list.add("и");
+//        list.add("теперь");
+//        list.add("купить");
 
-        ArrayList<String> list = new ArrayList<>(Arrays.asList(args)); //искать слова - передача оргументов из коммандной строки
+        //искать слова - передача аргументов из коммандной строки
+        ArrayList<String> list = new ArrayList<>(Arrays.asList(args));
 
-        Set<Map.Entry<String, Integer>> setWords = Crawler.searchWords(list);
+        //Поиск вхождений
+        LinkedList<Map.Entry<String, Integer>> setWords = Crawler.searchWords(list);
 
+        System.out.println("Searching results:");
         setWords.forEach(System.out::println);
+
     }
 }
